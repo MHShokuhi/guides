@@ -38,7 +38,7 @@
 
 ## مرحله ۱: نصب dnstm
 
-نصب dnstm با دستور زیر:
+نصب [dnstm](https://github.com/net2share/dnstm) با دستور زیر:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/net2share/dnstm/main/install.sh | sudo bash
@@ -80,7 +80,7 @@ sudo systemctl disable dnstm-dnsrouter
 
 ### مرحله ۴: نصب MasterDnsVPN
 
-الان می‌تونیم MasterDnsVPN رو با دستور زیر نصب کنیم:
+الان می‌تونیم [MasterDnsVPN](https://github.com/masterking32/MasterDnsVPN) رو با دستور زیر نصب کنیم:
 
 ```bash
 sudo bash <(curl -Ls https://raw.githubusercontent.com/masterking32/MasterDnsVPN/main/server_linux_install.sh)
@@ -114,7 +114,7 @@ sudo systemctl restart masterdnsvpn
 
 ## مرحله ۶: نصب و تنظیم theFeed
 
-برای نصب theFeed از دستور زیر استفاده کنید:
+برای نصب [theFeed](https://github.com/sartoopjj/thefeed) از دستور زیر استفاده کنید:
 
 ```bash
 sudo bash -c "$(curl -Ls https://raw.githubusercontent.com/sartoopjj/thefeed/main/scripts/install.sh)"
@@ -134,7 +134,7 @@ sudo bash -c "$(curl -Ls https://raw.githubusercontent.com/sartoopjj/thefeed/mai
 
 ## مرحله ۷: نصب dnsdist
 
-حالا dnsdist رو برای مدیریت پورت 53 و هدایت هر ابزار به پورت داخلی ابزار مدیریت پورت رو نصب می‌کنیم:
+حالا [dnsdist](https://www.dnsdist.org/) رو برای مدیریت پورت 53 و هدایت هر ابزار به پورت داخلی ابزار مدیریت پورت رو نصب می‌کنیم:
 
 ```bash
 sudo apt update && sudo apt install dnsdist -y
@@ -148,7 +148,7 @@ sudo apt update && sudo apt install dnsdist -y
 sudo nano /etc/dnsdist/dnsdist.conf
 ```
 
-کل محتویاتش رو پاک کنید و اینا رو بگذارید توش. در نظر داشته باشید که پورت‌ها و ساب‌دامنه‌ها باید مطابق چیزی باشه که از مرحله ۲ پیدا کرده یا از مراحل ۵ و ۶ تنظیم کرده بودیم. اون مقادیر داخل pool و در مقابلش PoolAction رو هم برای اینکه بعداً راحت‌تر باشید، برابر با مقدار tag برای ۳تا (هرچندتا) تونل dnstm قرار بدید که مثلاً در نهایت اینطوری بشه:
+کل محتویاتش رو پاک کنید و اینا رو بگذارید توش. در نظر داشته باشید که پورت‌ها و ساب‌دامنه‌ها باید مطابق چیزی باشه که از مرحله ۲ پیدا کرده یا از مراحل ۵ و ۶ تنظیم کرده بودیم. اون مقادیر داخل `pool` و در مقابلش `PoolAction` رو هم برای اینکه بعداً راحت‌تر باشید، برابر با مقدار tag برای ۳تا (هرچندتا) تونل dnstm قرار بدید که مثلاً در نهایت اینطوری بشه:
 
 ```conf
 setACL('0.0.0.0/0')
